@@ -138,7 +138,7 @@ b.remove(2)
 b.remove(4)
 b.remove(90)
 b.remove(6)
-b.remove(3) #I could go even further and return an iterator.
-b.printLink()
+b.remove(3)
+b.printLink()  #I could go even further and return an iterator. (To iterate linked list)
 
 print(b.sucessor(3))
