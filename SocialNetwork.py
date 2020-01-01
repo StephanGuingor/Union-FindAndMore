@@ -36,8 +36,9 @@ class Network:
     #Changes to Node
     val1 = self.__dict[val1]
     val2 = self.__dict[val2]
+    
     #Log dict
-    print(list(self.__dict))
+#     print(list(self.__dict))
 
     #Check Roots 
     v1r = self.__getRoot(val1)
@@ -88,13 +89,15 @@ class Network:
   def getEarliestTime(self):
     if self.head.rootVal == len(list(self.__dict)):
         print("All nodes connected!")
-    print(f"The earliest time is: {self.__rootDate}")
-    return self.__rootDate
+        print(f"The earliest time is: {self.__rootDate}")
+        return self.__rootDate
+    print("Not everyone is connected")
+    return None
   
   def connected(self,p,q):
     pn = self.__dict[p]
     qn = self.__dict[q]
-    print(f"Heaad items: {self.head.rootVal} vs {len(list(self.__dict))}")
+#     print(f"Head items: {self.head.rootVal} vs {len(list(self.__dict))}") #Checks number of items of main root and items on dictionary
     print(f"{p} and {q} are connected: {(self.__getRoot(pn) == self.__getRoot(qn))}")
     return self.__getRoot(pn) == self.__getRoot(qn)
 
