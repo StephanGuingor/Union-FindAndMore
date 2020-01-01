@@ -12,19 +12,18 @@ class GivSequence:
         self.__mergeSort(sequence)
 
         self.sequence = sequence
-        # self.__linkNodes(sequence)
-        # self.printLink()
+    
 
-        #recieves items, and sorts them into sequenceay. In logN.Checks half then half. Etc
-        #initializes two lists, link to next big or equal, normal list and linked list,both ways
-        
+     
+    #traverses linked list
     def printLink(self):
-        ini = self.nodePointers[0]
+        ini = self.nodePointers[0] 
         while ini:
             print(ini.value)
             ini = ini.next
 
-    def linkTheNodeForMerge(self,sequence,k):
+    #links values inside merge sort
+    def __linkTheNodeForMerge(self,sequence,k):
         if self.previous != None:
             tmp = Node(sequence[k])
             self.previous.next =  tmp
@@ -54,14 +53,14 @@ class GivSequence:
                     sequence[k] = L[i]
 
                     if main:
-                        self.linkTheNodeForMerge(sequence,k)
+                        self.__linkTheNodeForMerge(sequence,k) 
                     
                     i+=1
                 else: 
                     sequence[k] = R[j] 
                       
                     if main:
-                        self.linkTheNodeForMerge(sequence,k)
+                        self.__linkTheNodeForMerge(sequence,k)
 
                     j+=1
                 k+=1
@@ -71,7 +70,7 @@ class GivSequence:
                 sequence[k] = L[i]
 
                 if main:
-                    self.linkTheNodeForMerge(sequence,k)
+                    self.__linkTheNodeForMerge(sequence,k)
 
                 i+=1
                 k+=1
@@ -80,7 +79,7 @@ class GivSequence:
                 sequence[k] = R[j] 
 
                 if main:
-                    self.linkTheNodeForMerge(sequence,k)
+                    self.__linkTheNodeForMerge(sequence,k)
 
                 j+=1
                 k+=1
@@ -90,7 +89,6 @@ class GivSequence:
         
 
     def remove(self,x):
-        #searches value in list in log N time, as the constructor, if it finds it then
         #changes root pointer to 0
         #previous pointer is set to next (linked list)
 
@@ -119,7 +117,7 @@ class GivSequence:
     def sucessor(self,x):
         #if not removed
         #recieve index,
-        #check position in linked list a next, if there some.
+        #check position in linked list and its next value, if there some.
         idx = self.__retrieveIndex(x,self.sequence)
 
         if idx != None:
