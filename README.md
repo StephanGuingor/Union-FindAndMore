@@ -139,7 +139,7 @@ NET.union("Regina","Alessandro",16)
 //Checking again
 NET.getEarliestTime() //returns 16 and prints "Everyone is connected"
 ```
-#Given Sequence*
+# Given Sequence*
 
 ###### Prompt:
 
